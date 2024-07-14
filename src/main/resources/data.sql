@@ -1,0 +1,1 @@
+INSERT INTO providerTable (company_name, application_day, product_day, payment_day, address_company, phone, email, note) VALUES ('Нарния', '12-10-2023','13-10-2023','14-10-2023', 'Владивосток', '+78962345234', 'narnia@mail.ru', 'Оплата наличными');

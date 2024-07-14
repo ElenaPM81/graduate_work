@@ -1,0 +1,52 @@
+
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+
+    <title>Режим поставок товара</title>
+</head>
+<body style="padding: 20px">
+<img src="https://91.img.avito.st/image/1/-uxMYbaBVgU6xKQDNEqeirPCUgPuwFYDiaFSAzrEpAP6xloB-sBWQQ" class="rounded mx-auto d-block"  alt="грузовик"  >
+     <h1 style="text-align: center">Режим поставок товара</h1>
+     <table class="table table-striped table-hover" style="padding: 20px">
+         <tr>
+             <th>ID</th>
+             <th>Название компании</th>
+             <th>День заявки</th>
+             <th>День товара</th>
+             <th>День оплаты</th>
+             <th>Адрес компании</th>
+             <th>Номер телефона</th>
+             <th>Электронная почта</th>
+             <th>Примечание</th>
+    </tr>
+    <tr th:each="p: ${providers}" >
+        <td th:text="${p.getId()}"></td>
+        <td th:text="${p.getCompany_name()}"></td>
+        <td th:text="${p.getApplication_day()}"></td>
+        <td th:text="${p.getProduct_day()}"></td>
+        <td th:text="${p.getPayment_day()}"></td>
+        <td th:text="${p.getAddress_company()}"></td>
+        <td th:text="${p.getPhone()}"></td>
+        <td th:text="${p.getEmail()}"></td>
+        <td th:text="${p.getNote()}"></td>
+        <td>
+            <form th:method="GET" th:action="@{/delete/{id}(id=${p.getId()})}">
+                <button type="submit" class="btn btn-primary">Удалить</button>
+            </form>
+        </td>
+        <td>
+            <form th:method="GET" th:action="@{/update_provider/{id}(id=${p.getId()})}">
+                <button type="submit" class="btn btn-primary">Редактировать</button>
+            </form>
+        </td>
+    </tr>
+</table>
+<form th:method="GET" th:action="@{/new_provider}">
+    <button type="submit" class="btn btn-primary">Создать нового поставщика</button>
+</form>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>
