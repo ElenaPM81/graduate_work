@@ -13,10 +13,9 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 // класс который обрабатывает запросы
-@Controller// аннотация, указывающая, что этот класс - контроллер
-@AllArgsConstructor  // аннотация для автоматического создания конструктора
-@RequestMapping("/")  // аннотация для маршрутизации
-
+@Controller
+@AllArgsConstructor
+@RequestMapping("/")
 public class ProviderController {
     private final ProviderService providerService;
 

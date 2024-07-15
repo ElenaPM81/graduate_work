@@ -6,27 +6,25 @@ import jakarta.validation.constraints.Pattern;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-
-@Data   //аннотация для геттеров и сеттеров
-@AllArgsConstructor  // аннотация для конструктора
-@NoArgsConstructor   //  аннотация для конструктора без аргументов
-// класс  который содержит информацию об объекте "Поставщик"
+// класс который содержит информацию об объекте "Поставщик"
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
 public class Provider {
-    // в полях объявлены обязательные атрибуты
 
     private int id;
-    @NotEmpty  // поле не может быть пустым
-    @Pattern(regexp = "^[a-zA-Zа-яА-Я]*$", message = "Name should consist only letters")// проверка на неправильные символы
-    private String company_name;   // название компании
-    private String application_day; // день заявки
-    private String product_day;   // день поставки продукции
-    private String payment_day;   // день оплаты
-    private String address_company;  // адрес компании
+    @NotEmpty
+    @Pattern(regexp = "^[a-zA-Zа-яА-Я]*$", message = "Name should consist only letters")
+    private String company_name;
+    private String application_day;
+    private String product_day;
+    private String payment_day;
+    private String address_company;
     @Pattern(regexp = "\\+\\d+", message = "Telephone number consist of digits or + sign")
-    private String phone;    //  номер телефона
+    private String phone;
     @Email(message = "Email is not valid")
-    private String email;  // адрес электронной почты
-    private String note;  // примечание
+    private String email;
+    private String note;
 }
 
 

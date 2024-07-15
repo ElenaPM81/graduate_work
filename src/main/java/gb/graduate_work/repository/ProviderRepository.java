@@ -8,11 +8,11 @@ import org.springframework.stereotype.Repository;
 
 import java.util.List;
 // класс который работает с базой данных
-@Repository //аннотация, показывающая, что этот класс представляет собой репозиторий
+@Repository
 public class ProviderRepository {
-    private final JdbcTemplate jdbc;  // объект, работающий с базой данных
-    private final DbQueries dbQueries;  // объект, содержащий SQL-запросы
-//далее прописываем конструктор
+    private final JdbcTemplate jdbc;
+    private final DbQueries dbQueries;
+
     public ProviderRepository(JdbcTemplate jdbc, DbQueries dbQueries) {
         this.jdbc = jdbc;
         this.dbQueries = dbQueries;
@@ -20,7 +20,7 @@ public class ProviderRepository {
     //далее прописываем методы, которые будут взаимодействовать с базой данных
     RowMapper<Provider> providerRowMapper = (r, i) -> {
         Provider rowObject = new Provider();
-        rowObject.setId(r.getInt("id")); //метод get, возвращающий значение из таблицы
+        rowObject.setId(r.getInt("id"));
         rowObject.setCompany_name(r.getString("company_name"));//
         rowObject.setApplication_day(r.getString("application_day"));//
         rowObject.setProduct_day(r.getString("product_day"));

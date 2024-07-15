@@ -5,7 +5,7 @@ import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 // интерфейс который определяет аннотацию для логирования действия пользователя
-@Retention(RetentionPolicy.RUNTIME) // показывает, что аннотация может быть использована во время выполнения
+@Retention(RetentionPolicy.RUNTIME) // показывает, что аннотация может использоваться во время выполнения программы
 @Target(ElementType.METHOD)  // показывает, что аннотация может использоваться только в методах
 public @interface TrackUserAction {// аннотация для логирования действия пользователя
 

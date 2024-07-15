@@ -7,8 +7,8 @@ import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
-//
-@EnableWebSecurity // аннотация указывающая на то, что данный класс предназначен для конфигурации Spring Security
+// класс конфигурации Spring Security
+@EnableWebSecurity
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Override
@@ -18,7 +18,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .anyRequest().authenticated()
                 .and();
     }
-    @Autowired // аннотация
+    @Autowired
     public void configureGlobal(AuthenticationManagerBuilder auth) //
             throws Exception {
         auth
